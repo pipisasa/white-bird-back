@@ -10,5 +10,6 @@ class RequestModelSerializer(serializers.ModelSerializer):
             'id', 
             'full_name', 
             'email', 
-            'phone_number', 
+            'phone_number',
+            'date_created'
         )

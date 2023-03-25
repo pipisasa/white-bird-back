@@ -18,6 +18,7 @@ class RequestModel(models.Model):
             )
         ],
     )
+    date_created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'Заявка от {self.full_name}-{self.email}-{self.phone_number}'

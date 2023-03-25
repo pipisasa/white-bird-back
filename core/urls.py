@@ -10,6 +10,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('apps.events.urls')),
     path("", include("apps.reqs.urls")),
+    path('', include('apps.posts.urls'))
 ]
 
 
