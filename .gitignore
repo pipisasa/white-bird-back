@@ -1,0 +1,7 @@
+.vscode
+__pycache__
+media
+static
+env
+.env
+db.sqlite3
