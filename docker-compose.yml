@@ -1,10 +1,10 @@
-version: '3.9'
+version: '3.7'
 
 
 services:
   db:
     container_name: db_whitebird
-    image: postgres:15-alpine
+    image: postgres:15.0-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     networks:
@@ -14,7 +14,7 @@ services:
 
   web:
     container_name: whitebird_web
-    restart: unless-stopped
+    restart: always
     build:
       context: .
     volumes:
@@ -29,6 +29,21 @@ services:
     depends_on:
       - db
 
+  nginx:
+    container_name: nginx_barter
+    build:
+      context: ./docker/nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./static/:/static
+      - ./media/:/media
+    networks:
+      - my-network
+    depends_on:
+      - db
+      - web
 
 volumes:
   postgres_data:
