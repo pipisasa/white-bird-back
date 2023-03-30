@@ -26,10 +26,10 @@ class RequestModelExportView(APIView):
         # Создаем новый worksheet
         worksheet = workbook.active
         # Добавляем названия столбцов в первую строку
-        worksheet.append(["ФИО", "электронная почта", "номер телефона", "дата создания"])
+        worksheet.append(["ФИО", "электронная почта", "номер телефона", "страна", "роль", "дата заявки"])
         # Добавляем данные из queryset в worksheet
         for obj in queryset:
-            row = [obj.full_name, obj.email, obj.phone_number, obj.date_created]
+            row = [obj.full_name, obj.email, obj.phone_number, obj.country, obj.role, obj.date_created]
             worksheet.append(row)
         # Создаем HTTP response с xlsx файлом во вложении
         response = HttpResponse(content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
@@ -38,3 +38,4 @@ class RequestModelExportView(APIView):
         )
         workbook.save(response)
         return response
+
