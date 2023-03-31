@@ -11,6 +11,7 @@ ROLE_CHOICES = (
 class RequestModel(models.Model):
     full_name = models.CharField(max_length=255, verbose_name="ФИО")
     country = models.CharField(max_length=255, verbose_name="Страна")
+    city = models.CharField(max_length=255, verbose_name='Город')
     email = models.EmailField(max_length=219, verbose_name="Электронная почта")
     phone_number = models.CharField(
         max_length=20,
