@@ -13,6 +13,7 @@ class RequestModelAdmin(admin.ModelAdmin):
     actions = ("export_to_excel",)
     list_filter = (
         "country",
+        "city",
         "role",
         "date_created",
         "full_name",
