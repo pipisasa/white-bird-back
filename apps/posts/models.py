@@ -18,6 +18,8 @@ class Post(models.Model):
         null=True, 
         upload_to=generate_filename
     )
+    date = models.DateTimeField(auto_now_add=True, verbose_name='Дата')
+    date_updated = models.DateTimeField(auto_now=True, verbose_name="Дата обновления")
 
     def __str__(self):
         return self.title
