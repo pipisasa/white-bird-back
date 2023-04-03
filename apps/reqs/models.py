@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import RegexValidator
 
 
 ROLE_CHOICES = (
@@ -18,13 +17,7 @@ class RequestModel(models.Model):
         verbose_name="номер телефона",
         help_text="Enter phone number in international format",
         unique=True,
-        db_index=True,
-        validators=[
-            RegexValidator(
-                regex=r"^\+(?:[0-9] ?){6,14}[0-9]$",
-                message='Phone number must be entered in the format: "+999999999". Up to 15 digits allowed.',
-            )
-        ],
+        db_index=True
     )
     date_created = models.DateTimeField(auto_now_add=True)
     role = models.CharField(choices=ROLE_CHOICES, max_length=12, verbose_name="Роль")
