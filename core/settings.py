@@ -147,3 +147,7 @@ SWAGGER_SETTINGS = {
         "Token": {"type": "apiKey", "name": "Authorization", "in": "header"},
     },
 }
+
+
+# CSRF_TRUSTED_ORIGINS= ['localhost:3000']
+CSRF_TRUSTED_ORIGINS = ['https://white-bird-back-production.up.railway.app', 'https://white-bird-front-production.up.railway.app', 'http://localhost:3000', 'http://localhost:8000', 'htts://white-bird.kg']
