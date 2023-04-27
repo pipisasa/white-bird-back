@@ -152,10 +152,16 @@ SWAGGER_SETTINGS = {
 
 
 # CSRF_TRUSTED_ORIGINS= ['localhost:3000']
-CSRF_TRUSTED_ORIGINS = ['https://white-bird-back-production.up.railway.app', 'https://white-bird-front-production.up.railway.app', 'http://localhost:3000', 'http://localhost:8000', 'htts://white-bird.kg']
+CSRF_TRUSTED_ORIGINS = [
+    'https://white-bird-back-production.up.railway.app', 
+    'https://white-bird-front-production.up.railway.app', 
+    'http://localhost:3000', 
+    'http://localhost:8000', 
+    'htts://white-bird.kg'
+]
 
 cloudinary.config( 
-  cloud_name = env("CLOUDINARY_CLOUD_NAME"), 
-  api_key = env("CLOUDINARY_API_KEY"),
-  api_secret = env("CLOUDINARY_API_SECRET")
+    cloud_name = env("CLOUDINARY_CLOUD_NAME"), 
+    api_key = env("CLOUDINARY_API_KEY"),
+    api_secret = env("CLOUDINARY_API_SECRET")
 )

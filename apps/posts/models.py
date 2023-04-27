@@ -1,17 +1,10 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-from uuid import uuid4
-
-
-def generate_filename(instance, filename):
-    ext = filename.split(".")[-1]
-    filename = f"{str(uuid4())}.{ext}"
-    return f"{filename}"
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Новость")
-    content = models.TextField(verbose_name="Содержание поста")
+    title = models.CharField(max_length=255, verbose_name="Название анонса")
+    content = models.TextField(verbose_name="Содержание")
     img = CloudinaryField(
         'image',
         blank=True,
@@ -25,5 +18,5 @@ class Post(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = 'Новость'
-        verbose_name_plural = 'Новости'
+        verbose_name = 'Анонс'
+        verbose_name_plural = 'Анонсы'

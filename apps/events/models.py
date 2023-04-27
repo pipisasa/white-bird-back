@@ -1,12 +1,5 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-from uuid import uuid4
-
-
-def generate_filename(instance, filename):
-    ext = filename.split('.')[-1]
-    filename = f"{str(uuid4())}.{ext}"
-    return f"{filename}"
 
 
 class Event(models.Model):

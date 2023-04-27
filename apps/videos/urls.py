@@ -1,11 +1,8 @@
-from rest_framework.routers import SimpleRouter
+from django.urls import path
 
-from .views import VideoViewSet
+from .views import GalleryAPIView
 
 
-router = SimpleRouter()
-
-router.register('api/videos', VideoViewSet, basename='api/videos')
-
-urlpatterns = []
-urlpatterns += router.urls
+urlpatterns = [
+    path("api/gallery/", GalleryAPIView.as_view(), name="gallery-list"),
+]
