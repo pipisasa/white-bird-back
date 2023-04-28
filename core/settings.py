@@ -154,6 +154,7 @@ SWAGGER_SETTINGS = {
 # CSRF_TRUSTED_ORIGINS= ['localhost:3000']
 CSRF_TRUSTED_ORIGINS = [
     'https://white-bird-back-production.up.railway.app', 
+    'http://white-bird-back-production.up.railway.app',
     'https://white-bird-front-production.up.railway.app', 
     'http://localhost:3000', 
     'http://localhost:8000', 
